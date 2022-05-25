@@ -1,0 +1,110 @@
+.filterContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.4);
+	width: 80%;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.filterContainer input,
+.filterContainer select {
+	margin: 10px;
+	border: 0px solid #fff;
+	padding: 5px;
+	border-radius: 8px;
+}
+
+.buttonContainer {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.buttonContainer button {
+	margin: 8px;
+}
+
+.eventButton {
+	margin: 5px;
+}
+
+.eventCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 450px;
+	height: 250px;
+	margin: 22px;
+	cursor: pointer;
+	padding: 10px;
+	background-color: #f0f0f0;
+	text-transform: capitalize;
+	box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+		6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+		12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+		22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+		41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+		100px 100px 80px rgba(0, 0, 0, 0.07);
+	border-radius: 11px;
+}
+
+.eventCard .orgDetail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.eventCard .orgDetail .subOrgDetail {
+	text-align: end;
+}
+
+.eventCard span {
+	/* display: flex;
+	justify-content: flex-start;
+	align-items: center; */
+	vertical-align: middle;
+}
+
+.eventCard .iconDefault {
+	margin-right: 8px;
+}
+
+.bottomSec {
+	display: flex;
+}
+.feeDisplay {
+	flex: 1;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	font-size: 1em;
+	text-align: end;
+	font-weight: bold;
+	flex-direction: column;
+}
+
+.searchBar {
+	position: relative;
+}
+
+.searchResults {
+	position: absolute;
+	width: 180px;
+	top: 45px;
+	left: 20px;
+	background-color: #fff;
+	border: 1px solid #000;
+	display: flex;
+	flex-direction: column;
+}
+
+.searchResults span {
+	padding: 2px 0;
+	transition: all 0.2s ease-in;
+}
+
+.searchResults span:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}

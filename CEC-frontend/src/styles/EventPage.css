@@ -1,0 +1,97 @@
+.eventData__content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.eventData {
+	padding: 40px;
+	width: 100%;
+}
+
+.eventHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.forum {
+	margin-top: 20px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.forum h3 {
+	margin: 10px auto;
+}
+
+.messagesBox {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 10px;
+}
+
+.messagesBox p {
+	margin: 0;
+	padding: 0;
+}
+
+.messagesBox__message {
+	border-bottom: 1px solid #000;
+	margin-bottom: 10px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 16px;
+	padding: 10px;
+}
+
+.messagesBox__message--userScreenName {
+	align-self: flex-end;
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.messagesBox__message--userDetails {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-right: 20px;
+}
+
+.messagesBox__message img {
+	max-width: 400px;
+	margin-top: 20px;
+	/* margin: auto; */
+}
+
+.messagesBox__message--messageText {
+	flex: 1;
+}
+
+.inputField {
+	margin: 20px;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inputField input[type='text'],
+.inputField input[type='file'],
+.inputField button {
+	margin-right: 10px;
+	border: 0px solid #fff;
+	border-radius: 10px;
+	font-size: 1em;
+	padding: 10px;
+}
