@@ -1,0 +1,29 @@
+@include exports( "popup/theme" ) {
+
+    .k-popup {
+        @include fill(
+            $popup-text,
+            $popup-bg,
+            $popup-border
+        );
+    }
+
+    .k-animation-container {
+        @include border-bottom-radius-only( $border-radius );
+    }
+
+    .k-animation-container-shown,
+    .k-animation-container > .k-popup {
+        @include box-shadow( $popup-shadow );
+    }
+
+    .k-animation-container-fixed > .k-popup {
+        @include box-shadow( none );
+    }
+
+    .k-popup > .k-colorpalette,
+    .k-popup > .k-flatcolorpicker {
+        background: transparent;
+    }
+
+}
