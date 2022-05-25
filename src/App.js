@@ -1,9 +1,10 @@
+/* eslint-disable */
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Auth from './components/auth';
 import Dashboard from './components/dashboard';
-/* eslint-disable */
+
 import React from 'react';
 // import styled from 'styled-components';
 import logo from './CEC-Logo.png';

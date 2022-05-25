@@ -1,8 +1,9 @@
+/* eslint-disable  */
 import '../styles/EventPage.css';
 
 import { BsFillCalendarWeekFill, BsPeopleFill } from 'react-icons/bs';
 import React, { useEffect, useState } from 'react';
-/* eslint-disable  */
+
 /* eslint-disable no-else-return */
 /* eslint-disable arrow-body-style */
 /* eslint-disable react/prop-types */

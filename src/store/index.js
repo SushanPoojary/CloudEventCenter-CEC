@@ -1,3 +1,4 @@
+/* eslint-disable  */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable prefer-object-spread */
 import { createStore } from 'redux';
