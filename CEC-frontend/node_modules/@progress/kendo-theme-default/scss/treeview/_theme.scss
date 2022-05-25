@@ -1,0 +1,81 @@
+@include exports("treeview/theme") {
+
+    // Treeview
+    .k-treeview {
+        @include fill(
+            $treeview-text,
+            $treeview-bg,
+            $treeview-border
+        );
+    }
+
+
+    // Treeview item
+    .k-treeview-item {}
+
+
+    // Treeview leaf
+    .k-treeview-leaf,
+    .k-treeview .k-in {
+
+        // Hover state
+        &:hover,
+        &.k-state-hover {
+            @include fill(
+                $treeview-item-hovered-text,
+                $treeview-item-hovered-bg,
+                $treeview-item-hovered-border,
+                $treeview-item-hovered-gradient
+            );
+        }
+
+        // Focus state
+        &.k-state-focus,
+        &.k-state-focused {
+            @include box-shadow( $treeview-item-focused-shadow );
+        }
+
+        // Selected state
+        &.k-state-selected {
+            @include fill(
+                $treeview-item-selected-text,
+                $treeview-item-selected-bg,
+                $treeview-item-selected-border,
+                $treeview-item-selected-gradient
+            );
+        }
+    }
+
+
+    // Treeview load more button
+    .k-treeview .k-treeview-load-more-button {
+        @include fill(
+            $treeview-loadmore-text,
+            $treeview-loadmore-bg,
+            $treeview-loadmore-border
+        );
+
+        // Hover state
+        &:hover,
+        &.k-state-hover {
+            @include fill(
+                $treeview-loadmore-hover-text,
+                $treeview-loadmore-hover-bg,
+                $treeview-loadmore-hover-border
+            );
+        }
+
+        // Focus state
+        &:focus,
+        &.k-state-focus,
+        &.k-state-focused {
+            @include fill(
+                $treeview-loadmore-focus-text,
+                $treeview-loadmore-focus-bg,
+                $treeview-loadmore-focus-border
+            );
+            @include box-shadow( $treeview-loadmore-focus-shadow );
+        }
+    }
+
+}

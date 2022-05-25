@@ -1,0 +1,44 @@
+@include exports("searchbox/layout") {
+
+    // Searchbox
+    .k-searchbox {
+        @include border-radius( $input-border-radius );
+        width: $input-default-width;
+        border-width: $input-border-width;
+        border-style: solid;
+        box-sizing: border-box;
+        outline: 0;
+        font-family: $input-font-family;
+        font-size: $input-font-size;
+        line-height: $input-line-height;
+        text-align: start;
+        white-space: nowrap;
+        display: inline-flex;
+        flex-flow: row nowrap;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+        transition: all .1s ease; // sass-lint:disable-line no-transition-all
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: $rgba-transparent;
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        // Input
+        > .k-input {
+            padding: $input-padding-y $input-padding-x;
+        }
+
+
+        // Loading icon
+        .k-i-loading {
+            width: $input-icon-width;
+            height: $input-icon-height;
+        }
+    }
+
+}

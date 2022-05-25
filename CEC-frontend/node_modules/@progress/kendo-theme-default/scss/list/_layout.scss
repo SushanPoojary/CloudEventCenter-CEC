@@ -1,0 +1,162 @@
+@include exports( "list/layout" ) {
+
+    .k-list,
+    .k-list-container {
+        font-size: $list-font-size;
+        line-height: $list-line-height;
+    }
+
+    // Layout
+    .k-list-scroller {
+        position: relative;
+        overflow: auto;
+    }
+    .k-list {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        list-style: none;
+    }
+
+    .k-list__group-header { // sass-lint:disable-line class-name-format
+        padding: $list-item-padding-y $list-item-padding-x;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        font-size: $list-font-size;
+        white-space: normal;
+        position: relative;
+        transition: $transition;
+    }
+
+    .k-outer-group-header,
+    .k-list > .k-group-header,
+    .k-list-container > .k-group-header,
+    kendo-list > .k-group-header,
+    .k-virtual-wrap > .k-group-header {
+        @extend .k-list__group-header;
+    }
+
+    .k-list > .k-group-header,
+    .k-list > .k-outer-group-header {
+        border-width: 0;
+        box-shadow: none !important; // sass-lint:disable-line no-important
+
+        &.k-virtual-item {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-color: inherit;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .k-list__item { // sass-lint:disable-line class-name-format
+        padding: $list-item-padding-y $list-item-padding-x;
+        line-height: $list-line-height;
+        white-space: normal;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        gap: $icon-spacing;
+        cursor: default;
+        position: relative;
+        transition-property: color, background-color, outline-color, box-shadow;
+        transition-duration: 200ms;
+        transition-timing-function: ease;
+        outline: none;
+
+        &.k-first::before {
+            content: "";
+            display: block;
+            border-top-width: 1px;
+            border-top-style: solid;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+    .k-list .k-item,
+    .k-list-optionlabel {
+        @extend .k-list__item;
+    }
+
+    .k-list__item__group { // sass-lint:disable-line class-name-format
+        padding: 0 .5em;
+        font-size: .75em;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .k-rtl .k-list__item__group, // sass-lint:disable-line class-name-format
+    [dir="rtl"] .k-list__item__group { // sass-lint:disable-line class-name-format
+        right: auto;
+        left: 0;
+    }
+    .k-list .k-item > .k-group {
+        @extend .k-list__item__group;
+    }
+
+
+    // Filter
+    .k-list-filter {
+        padding: $padding-x;
+        box-sizing: border-box;
+        display: block;
+        position: relative;
+        flex: none;
+
+        .k-searchbox {
+            width: 100%;
+        }
+    }
+
+    .k-virtual-content {
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+    }
+    .k-virtual-list > .k-item {
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        > .k-list-item-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+
+    // No data
+    .k-no-data {
+        min-height: 140px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: lighter;
+        text-align: center;
+        white-space: normal;
+    }
+
+
+    // Alias
+    .k-nodata {
+        @extend .k-no-data !optional;
+    }
+
+}
