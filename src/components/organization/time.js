@@ -87,6 +87,7 @@ const fut = parseInt(future)+1;
     }
   })
   .catch(function (error) {
+    alert(error);
     console.log(error);
   });
 //   this.setState({
@@ -120,6 +121,7 @@ const fut = parseInt(future)+1;
       }
     })
     .catch(function (error) {
+      alert(error);
       console.log(error);
     });
   //   this.setState({

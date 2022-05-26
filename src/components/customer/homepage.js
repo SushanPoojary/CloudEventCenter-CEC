@@ -160,26 +160,26 @@ class homepage extends React.Component {
 	};
 
 	 StatusDisplay = (_eventData) => {
-		//  console.log(moment(this.state.time));
-		//  console.log(moment(_eventData.signUpDeadline_));
-		//  console.log(_eventData.signUpDeadline >= this.state.time);
+		 console.log(moment(this.state.time));
+		 console.log(moment(_eventData.signUpDeadline_));
+		 console.log(moment(_eventData.signUpDeadline) >= this.state.time);
 		//  console.log(moment(_eventData.signUpDeadline) >= this.state.time);
 		if(_eventData.isCancelledAndEmailSent){
 			return(
 				'Cancelled'
 			)
 		}
-		else if(_eventData.signUpDeadline >= this.state.time){
+		else if(moment(_eventData.signUpDeadline) >= moment(this.state.time)){
 			return(
 				'Open For Signup'
 			)
 		}
-		else if(this.state.time > _eventData.signUpDeadline && this.state.time <_eventData.startDateTime){
+		else if(moment(this.state.time) > moment(_eventData.signUpDeadline) && moment(this.state.time) <moment(_eventData.startDateTime)){
 			return(
 				'Signup Closed'
 			)
 		}
-		else if(this.state.time >= _eventData.startDateTime && this.state.time <= _eventData.endDateTime){
+		else if(moment(this.state.time) >= moment(_eventData.startDateTime) && moment(this.state.time) <= moment(_eventData.endDateTime)){
 			return(
 				'Ongoing'
 			)
@@ -264,6 +264,8 @@ class homepage extends React.Component {
 			event_id: eventId,
 		}).then((res) => {
 			console.log(res.status);
+		}).catch((err) => {
+			alert(err);
 		});
 	};
 

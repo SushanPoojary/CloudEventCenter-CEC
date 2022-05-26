@@ -104,7 +104,8 @@ const UserPage = () => {
 				userWhoIsTryingToApproveEmail: userWhoIsTryingToApproveEmail,
 				event_id: event_id,
 			})
-			.then((res) => res.status === 200 && getData());
+			.then((res) => res.status === 200 && getData())
+			.catch((err) => alert(err));
 	};
 
 	const handleReject = (
@@ -123,7 +124,8 @@ const UserPage = () => {
 				userWhoIsTryingToRejectEmail: userWhoIsTryingToRejectEmail,
 				event_id: event_id,
 			})
-			.then((res) => res.status === 200 && getData());
+			.then((res) => res.status === 200 && getData())
+			.catch((err) => alert(err));
 	};
 
 	const handleReviewSend = () => {};

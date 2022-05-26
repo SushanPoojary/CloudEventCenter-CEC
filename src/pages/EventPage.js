@@ -82,7 +82,7 @@ const EventPage = () => {
 
 	const getInputFields = (email, eventData, type) => {
 		// console.log(systemTime);
-		console.log(moment(eventData.endDateTime).add(3, 'days') > systemTime && !eventData.isCancelledAndEmailSent)
+		// console.log(moment(eventData.endDateTime).add(3, 'days') > systemTime && !eventData.isCancelledAndEmailSent)
 		if (moment(eventData.signUpDeadline) >= systemTime) {
 			return (
 				<div className='inputField'>
@@ -153,6 +153,7 @@ const EventPage = () => {
 						setMessage('');
 					})
 					.catch(function (error) {
+						alert(error);
 						console.log(error);
 					});
 			}
@@ -168,6 +169,7 @@ const EventPage = () => {
 						setMessage('');
 					})
 					.catch(function (error) {
+						alert(error);
 						console.log(error);
 					});
 			}
@@ -195,6 +197,7 @@ const EventPage = () => {
 								setMessage('');
 							})
 							.catch(function (error) {
+								alert(error);
 								console.log(error);
 							});
 					}
@@ -211,6 +214,7 @@ const EventPage = () => {
 								setMessage('');
 							})
 							.catch(function (error) {
+								alert(error);
 								console.log(error);
 							});
 					}
@@ -262,7 +266,7 @@ const EventPage = () => {
 										{item.imageUrl !== null && <img src={item.imageUrl} />}
 										<p className='messagesBox__message--userScreenName'>
 										<a href={`/user/${item.messageCreator.email}`}>
-														{item.messageCreator.email===eventData.organizer.email}?(<span style={{color:'green'}}>{item.messageCreator.screenName}</span>):(<span>{item.messageCreator.screenName}</span>)
+										{(item.messageCreator.email===eventData.organizer.email)?(<span style={{color:'red', backgroundColor:'lightgreen'}}>{item.messageCreator.screenName} OP</span>):(<span>{item.messageCreator.screenName}</span>)}
 													</a>
 										</p>
 									</div>
@@ -289,6 +293,9 @@ const EventPage = () => {
 			.then((res) => {
 				getData();
 				console.log(res.status);
+			})
+			.catch((err) => {
+				alert(err);
 			});
 		}
 		else{
@@ -310,6 +317,9 @@ const EventPage = () => {
 				closeModal();
 				getData();
 				console.log(res.status);
+			})
+			.catch((err) => {
+				alert(err);
 			});
 		
 		
@@ -325,6 +335,9 @@ const EventPage = () => {
 			.then((res) => {
 				getData();
 				console.log(res.status);
+			})
+			.catch((err)=> {
+				alert(err);
 			});
 	};
 
@@ -357,6 +370,7 @@ const EventPage = () => {
 
 	const GetOrgCancel = (_eventData) => {
 		console.log(_eventData);
+		// console.log(moment(_eventData.endDateTime).add(3, 'days') >= systemTime );
 		 if (localStorage.getItem('email') === _eventData.organizer.email 
 		 && moment(_eventData.endDateTime).add(3, 'days') >= systemTime 
 		 && moment(_eventData.signUpDeadline) < systemTime && !_eventData.participantForumClosedByOrganizer
@@ -395,23 +409,25 @@ const EventPage = () => {
 	};
 
 	const StatusD = (_eventData) => {
-		console.log(_eventData.approvedParticipants.length);
+		// console.log(_eventData.approvedParticipants.length);
+		// console.log(_eventData.signUpDeadline);
+		// console.log(systemTime);
 		if(_eventData.isCancelledAndEmailSent){
 			return(
 				'Cancelled'
 			)
 		}
-		else if(_eventData.signUpDeadline >= systemTime){
+		else if(moment(_eventData.signUpDeadline) >= systemTime){
 			return(
 				'Open For Signup'
 			)
 		}
-		else if(systemTime > _eventData.signUpDeadline && systemTime <_eventData.startDateTime){
+		else if(systemTime > moment(_eventData.signUpDeadline) && systemTime <moment(_eventData.startDateTime)){
 			return(
 				'Signup Closed'
 			)
 		}
-		else if(systemTime >= _eventData.startDateTime && systemTime <= _eventData.endDateTime){
+		else if(systemTime >= moment(_eventData.startDateTime) && systemTime <= moment(_eventData.endDateTime)){
 			return(
 				'Ongoing'
 			)

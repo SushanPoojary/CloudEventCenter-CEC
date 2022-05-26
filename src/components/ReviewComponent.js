@@ -31,7 +31,7 @@ const ReviewComponent = ({
 	const showReviewController = () => {
 		return (
 			moment(event.startDateTime) <
-			systemTime <
+			systemTime && systemTime<
 			moment(event.endDateTime).add(7, 'days')
 		);
 	};
@@ -52,7 +52,10 @@ const ReviewComponent = ({
 					setShowReviewSendStatus(true);
 					callGetData();
 				}
-			});
+			})
+			.catch((err) => {
+				alert(err);
+			})
 	};
 
 	return (

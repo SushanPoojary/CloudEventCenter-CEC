@@ -10,6 +10,7 @@ import {
 import { Redirect } from 'react-router';
 import history from './customer/history';
 import UserLogin from '../components/customer/index';
+import './signup.css';
 
 const Signup = () => {
   const emailRef = useRef();
@@ -36,16 +37,16 @@ const Signup = () => {
   }
 
   return (
-    <div className="form">
+    <div className="SignupCon">
       <h2> New User</h2>
-      <form onSubmit={onSubmit}>
-        <input placeholder="Email" type="email" ref={emailRef} />
+      <form className="containerSign" onSubmit={onSubmit}>
+        <input className="inputSign" placeholder="Email" type="email" ref={emailRef} />
         {/* <input placeholder="Name" type="name" ref={nameRef} /> */}
-        <input placeholder="Password" type="password" ref={psdRef} />
-        <button type="submit">Register</button>
+        <input className="inputSign" placeholder="Password" type="password" ref={psdRef} />
+        <button className="buttonSign" type="submit">Register</button>
       </form>
       <form onSubmit={googleLoginS}>
-        <button type="submit">Google Signin</button>
+        <button className="buttonSign" type="submit">Google Signin</button>
       </form>
       <div className="row">
             <div className="col-xs" />

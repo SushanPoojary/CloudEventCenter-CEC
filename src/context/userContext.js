@@ -56,7 +56,7 @@ export const UserContextProvider = ({ children }) => {
       try {
         const userCred = await createUserWithEmailAndPassword(auth, email, password);
         await sendEmailVerification(userCred.user, {
-          url: "https://master.d2zeq5uw1p13bo.amplifyapp.com/firstVisit",
+          url: "http://localhost:3000/firstVisit",
         });
         // localStorage.setItem("password", password);
         return {
@@ -64,6 +64,7 @@ export const UserContextProvider = ({ children }) => {
         };
         
       } catch (e) {
+        alert(e);
         return {
           error: e.message,
         };
@@ -77,7 +78,7 @@ export const UserContextProvider = ({ children }) => {
     try {
       const userCred = await signInWithPopup(auth, provider);
       await sendEmailVerification(userCred.user, {
-        url: "https://master.d2zeq5uw1p13bo.amplifyapp.com/firstVisit",
+        url: "http://localhost:3000/firstVisit",
       });
       // localStorage.setItem("password", 'google');
       return {
