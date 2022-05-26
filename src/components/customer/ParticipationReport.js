@@ -186,11 +186,11 @@ class ParticipationReport extends React.Component {
                 Percent of Paid Events: {item.percentageOfPaidEvents}
                 </Card.Text>
                 <Card.Text>
-                Number of Participant Requests / Total Number of Min Participants:{item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants} 
+                Number of Participant Requests / Total Number of Min Participants: {item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants} 
                 {/* {!item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants?(item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants):(0)} */}
                 </Card.Text>
                 <Card.Text>
-                Avg Number of Participants: {!item.averageNumberOfParticipantsOfTheseEvents?(item.averageNumberOfParticipantsOfTheseEvents):(0)}
+                Avg Number of Participants: {item.averageNumberOfParticipantsOfTheseEvents}
                 </Card.Text>
                 <Card.Text>
                 Total Revenue: {item.totalRevenueFromPaidEvents}
@@ -274,10 +274,10 @@ if(this.state.resdata && this.state.orgdata)  {
                 Percent of Paid Events: {item.percentageOfPaidEvents}
                 </Card.Text>
                 <Card.Text>
-                Number of Participant Requests / Total Number of Min Participants: {!item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants?(item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants):(0)}
+                Number of Participant Requests / Total Number of Min Participants: {item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants}
                 </Card.Text>
                 <Card.Text>
-                Avg Number of Participants: {!item.averageNumberOfParticipantsOfTheseEvents?(item.averageNumberOfParticipantsOfTheseEvents):(0)}
+                Avg Number of Participants: {item.averageNumberOfParticipantsOfTheseEvents}
                 </Card.Text>
                 <Card.Text>
                 Total Revenue: {item.totalRevenueFromPaidEvents}

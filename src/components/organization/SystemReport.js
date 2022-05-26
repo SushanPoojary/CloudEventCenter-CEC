@@ -99,10 +99,10 @@ class SystemReport extends React.Component {
                   Percentage of Paid Events: {item.percentageOfPaidEvents}
                   </Card.Text>
                   <Card.Text>
-                  Participant Request/Min Participants: {!item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants?(item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants):(0)}
+                  Participant Request/Min Participants: {item.numberOfParticipationRequestsDividedByTheTotalNumberOfMinimumParticipants}
                   </Card.Text>
                   <Card.Text>
-                  Avg No. of Participants: {!item.averageNumberOfParticipantsOfTheseEvents?(item.averageNumberOfParticipantsOfTheseEvents):(0)}
+                  Avg No. of Participants: {item.averageNumberOfParticipantsOfTheseEvents}
                   </Card.Text>
                   </div>))}
                 </Card.Body>
