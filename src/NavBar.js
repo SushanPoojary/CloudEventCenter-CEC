@@ -129,12 +129,12 @@ class NavBar extends Component {
 					<Button variant='outline-success' style={buttonStyle} href='/signup'>
 						Sign Up
 					</Button>
-					<Button variant='success' style={buttonStyle} href='/userReg'>
+					{/* <Button variant='success' style={buttonStyle} href='/userReg'>
 						User
 					</Button>
 					<Button variant='primary' style={buttonStyle} href='/orgReg'>
 						Organization?
-					</Button>
+					</Button> */}
 				</Form>
 			);
 		}
